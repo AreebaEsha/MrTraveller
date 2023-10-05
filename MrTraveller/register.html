@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+  <link rel="stylesheet" href="./assets/css/all.css" />
+    <link rel="stylesheet" href="./assets/CSS/style.css">
+    <title>Booking Form</title>
+    <link rel="icon" href="./assets/Images/LOGO.png">
+
+    <style>
+        body {
+            height: 100%;
+            margin: 0;
+            font-family: 'poppins', sans-serif;
+        }
+
+        .hero{
+            height: 11vh;
+            width: 11vw;
+        }
+
+        .background {
+            background-image: url(./assets/Images/regbg.jpg);
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .EmbeddedMap {
+            display:flex;
+            margin-left: 5%;
+        }
+
+        .booking-form {
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 20px ;
+            border-radius: 10px;
+            max-width: 500px;
+            width: 80%;
+            margin: 0 auto;
+            height: auto;
+        }
+
+        .booking-form label{
+            margin-bottom:5px;
+            margin-top:10px;
+            font-size:larger;
+        }
+
+        .booking-form h2 {
+            text-align: center;
+        }
+
+        .booking-form form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .booking-form input,
+        #FCity,#TCity,#package {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        
+        
+        .booking-form button {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .booking-form button:hover {
+            background-color: #45a049;
+        }
+
+        .radio-btn {
+            margin: 0 20px;
+        }
+
+        .radio-btn .btn {
+            margin: 20px 10px 20px 0;
+            box-shadow: none;
+        }
+
+        .radio-btn .btn::after {
+            content: '';
+            height: 15px;
+            width: 15px;
+            top: -2px;
+            left: -1px;
+            background-color: #fff;
+            position: relative;
+            display: inline-block;
+            border: 3px solid #fff;
+            visibility: visible;
+            border-radius: 50%;
+        }
+
+        .radio-btn .btn:checked::after {
+            content: '';
+            background-color: #000;
+            transition: 0.5s;
+        }
+
+        .radio-btn span {
+            margin-right: 5px;
+        }
+
+        .input-grp{
+            width:151px;
+            display:inline-block;
+        }
+        .form-control{
+            border-radius: 0;
+        }
+        .select-date::-webkit-inner-spin-button,
+        .select-date::-webkit-outer-spin-button{
+            -webkit-appearance: none;
+            margin:0;
+        }
+
+        .select-date::-webkit-calender-picker-indicator{
+            background: transparent;
+        }
+        .custom-select{
+            border:1px solid #ced4da;
+            height:40px;
+            border-radius: 5px;
+        }
+
+        .btn{
+            padding:10px 60px;
+            border:0;
+            outline:none;
+            cursor:pointer;
+            font-size:22px;
+            /* font-weight:500; */
+            /* border-radius: 30px; */
+        }
+        .popup{
+            width:400px;
+            background:#FFF;
+            border-radius: 6px;
+            position:absolute;
+            top:0;
+            left:50%;
+            transform:translate(-50%, -50%)  scale(0.1);
+            text-align:center;
+            padding:0 30px 30px;
+            color:#333;
+            visibility: hidden;
+            transition: transform 0.4s,top 0.4s;
+        }
+        .popup img{
+            width:100px;
+            margin-top: -50px;
+            border-radius: 50%;
+            box-shadow: 0 2px 5px rgba(0,0, 0, 0.2);
+        }
+        .popup h2{
+            font-size:38px;
+            font-weight: 500;
+            margin:30px 0 10px;
+        }
+        .popup button{
+            width:100%;
+            margin-top:50px;
+            padding:10px 0;
+            background: #6fd649;
+            color:#fff;
+            border:0;
+            outline:none;
+            font-size:18px;
+            border-radius: 4px;
+            cursor: pointer;
+            box-shadow: 0 5px 5px rgba(0,0,0,0.2);
+        }
+        .open-popup{
+            visibility: visible;
+            top:50%;
+            transform:translate(-50%, -50%)  scale(1);
+
+        }
+
+        .back{
+            text-decoration: none;
+            /* margin-left: 2%; */
+            left:80px;
+            position:absolute;
+            margin-top: -40%;
+            border: 2px solid none;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 20px;
+            padding-right: 20px;
+            border-radius: 6px;
+            background-color: #6fd649;
+            color: white;
+            font-size: 19px;
+            font-weight: 300;
+        }
+
+        .back:hover{
+            background-color: #4CAF50;
+        }
+    .okback
+    {
+     text-decoration: none;
+     color:white;
+     font-weight:bold;
+    }
+
+    </style>
+
+
+
+</head>
+
+<body>
+
+    <div class="hero">
+        <nav>
+            <img src="./assets/Images/LOGO.png" class="logo">
+            <ul class="navbar">
+                <li><a href="./index.html">Home</a></li>
+                <!-- <li><a href="./Locations.html">Locations</a></li> -->
+                <!-- <li><a href="Packages.html">Packages</a></li> -->
+                <li><a href="About Us.html">About</a></li>
+                <li><a href="Contact US.html">Contact Us</a></li>
+
+            </ul>
+        </nav>
+    </div>
+
+    <div class="background">
+
+        <div class="EmbeddedMap">
+             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d195884.30182075233!2d32.597611159203105!3d39.90352281186366!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d347d520732db1%3A0xbdc57b0c0842b8d!2sAnkara%2C%20T%C3%BCrkiye!5e0!3m2!1sen!2s!4v1695905815339!5m2!1sen!2s" width="650" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+       
+
+        <div class="booking-form">
+            <h2>Book Your Trips Right Now!</h2>
+            <form action="./book.php" method="POST" onsubmit="return validateform()">
+                <div class="radio-btn">
+                    <input type="radio" class="btn" name="checkType" value="Roundtrip" checked="checked"><span>Roundtrip</span>
+                    <input type="radio" class="btn" name="checkType" value="One-Way"><span>One-Way</span>
+                    <input type="radio" class="btn" name="checkType" value="Multi-City"><span>Multi-City</span>
+                </div>
+
+               
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email" required="required">
+
+                
+                <label>Phone #:</label>
+                <input type="tel" name="myphone" placeholder="Phone No." maxlength="11" id="phonenum" required="required">
+                
+
+                <!-- <label for="destination">Destination:</label>
+                <input type="text" name="destination" id="destination" required> -->
+
+                <!-- <label>Flying From</label>
+                <input type="text" class="form-control" placeholder="City" required="required"> -->
+
+                <label for="FCity">Flying From:</label>
+                <select id="FCity" name="FCity">
+                    <option value="France">France</option>
+                    <option value="Indonesia">Indonesia</option>
+                    <option value="NetherLand">NetherLand</option>
+                    <option value="South Korea">South Korea</option>
+                    <option value="Turkey">Turkey</option>
+                    <option value="United Arab Emirates">United Arab Emirates</option>
+                </select>
+
+                <!-- <label>Flying To</label>
+                <input type="text" class="form-control" placeholder="City" required="required"> -->
+
+                <label for="TCity">Flying To:</label>
+                <select id="TCity" name="TCity">
+                    <option value="France">France</option>
+                    <option value="Indonesia">Indonesia</option>
+                    <option value="NetherLand">NetherLand</option>
+                    <option value="South Korea">South Korea</option>
+                    <option value="Turkey">Turkey</option>
+                    <option value="United Arab Emirates">United Arab Emirates</option>
+                </select>
+
+              
+                     <label for="package">Packages:</label>
+                <select id="package" name="package">
+                    <option>Bronze</option>
+                    <option>Silver</option>
+                    <option>Gold</option>
+                    <option>Platinum</option>
+                </select>
+                
+               
+
+                <div class="input-group">
+                    <label>Adults</label>
+                    <input type="number" name="adults" class="form-control" value="1" min="1" required="required">
+                </div>
+
+                <div class="input-group">
+                    <label>Children</label>
+                    <input type="number" name="children" class="form-control" value="0" min="0" required="required">
+                </div>
+
+                <div class="input-group">
+                    <label>Travel Class</label>
+                    <select name="travelClass" class="custom-select" >
+                        <option  value="Economy">Economy Class</option>
+                        <option  value="Business">Business Class</option>
+                    </select>
+                </div>
+
+                <label for="departure-date">Departure Date:</label>
+                <input type="date" name="departure-date" id="departure-date" required="required">
+
+
+                <label for="return-date">Return Date:</label>
+                <input type="date" name="return-date" id="return-date" required="required">
+
+                <button type="submit" class="btn" onclick="openPopup()">Submit</button>
+                <div class="popup" id="popup">
+                    <img src="./assets/Images/tick.png">
+                    <h2>Thank You!</h2>
+                    <p>Your details has been successfully submitted.</p>
+                    <button type="button" onclick="closePopup()"><a class="okback" href="./index.html">OK</a></button>
+                </div>
+
+
+            </form>
+
+            
+            
+        </div>
+        
+        <a class="back" href="./index.html"><i class="fa-solid fa-arrow-left"></i>&nbsp;Back</a>
+    </div>
+    
+
+
+   <script>
+
+document.addEventListener("DOMContentLoaded", function () {
+    const popup = document.getElementById("popup");
+    const form = document.querySelector("form");
+
+    form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        if (validatePhoneNumber() && validateDate() && validateForm()) {
+            sendData(); // Send form data to the server
+        }
+    });
+
+    function validatePhoneNumber() {
+        const phoneNumberInput = document.getElementById("phonenum");
+        const phoneNumber = phoneNumberInput.value;
+
+        if (phoneNumber.length < 11 || isNaN(phoneNumber)) {
+            alert("Please enter a valid 11-digit phone number.");
+            return false;
+        }
+        return true;
+    }
+
+    function validateDate() {
+        const departureDateInput = document.getElementById("departure-date");
+        const returnDateInput = document.getElementById("return-date");
+
+        const today = new Date();
+        const departureDate = new Date(departureDateInput.value);
+        const returnDate = new Date(returnDateInput.value);
+
+        if (departureDate < today) {
+            alert("Please select a departure date that is not in the past.");
+            return false;
+        }
+
+        if (returnDate < departureDate) {
+            alert("Please select a return date that is not before the departure date.");
+            return false;
+        }
+
+        return true;
+    }
+
+    function sendData() {
+        const formData = new FormData(form);
+        fetch("book.php", {
+            method: "POST",
+            body: formData,
+        })
+            .then((response) => response.text())
+            .then((data) => {
+                if (data === "success") {
+                    showMessage();
+                    resetForm();
+                } else {
+                    alert("An error occurred while sending the message.");
+                }
+            })
+            .catch((error) => {
+                console.error("Error:", error);
+            });
+    }
+
+    function validateForm() {
+        // You can add additional form validation here if needed
+        return true;
+    }
+
+    function showMessage() {
+        popup.classList.add("open-popup");
+    }
+
+    function resetForm() {
+        form.reset();
+    }
+
+    function closePopup() {
+        popup.classList.remove("open-popup");
+    }
+
+    popup.querySelector("button").addEventListener("click", closePopup);
+});
+
+   </script> 
+
+
+</body>
+
+</html>

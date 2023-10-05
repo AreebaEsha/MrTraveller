@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Contact Us</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./assets/css/all.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="icon" href="./assets/Images/LOGO.png" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        scroll-behavior: smooth;
+        font-family: "Poppins", sans-serif;
+      }
+
+      .hero {
+        height: 4vh;
+      }
+
+      .contact {
+        position: relative;
+        /* min-height: 93.5vh; */
+        min-height:100vh;
+        padding: 50px 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-image: linear-gradient(
+            rgba(54, 68, 54, 0.5),
+            rgb(54, 68, 54, 0.7)
+          ),
+          url(./assets/images/contactBg.jpg);
+        background-size:cover;
+        /* background-attachment:fixed; */
+        
+      }
+      .contact .content {
+        max-width: 800px;
+        text-align: center;
+      }
+      .contact .content h2 {
+        font-size: 36px;
+        font-weight: 550;
+        color: white;
+      }
+      .contact .content p {
+        font-size: 22px;
+        font-weight: 200;
+        color: white;
+      }
+      .container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 30px;
+      }
+      .container .contactInfo {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+      }
+      .container .contactInfo .box {
+        position: relative;
+        padding: 20px 0;
+        display: flex;
+      }
+      .container .contactInfo .box .icon {
+        min-width: 60px;
+        height: 60px;
+        background: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        font-size: 26px;
+      }
+      .fas,
+      .fa-solid {
+        font-weight: 800;
+        color: black;
+      }
+      .fab,
+      .fa-brands {
+        font-weight: 500;
+        /* color: #25d366; */
+        color: black;
+      }
+      .far,
+      .fa-regular {
+        font-weight: 400;
+        color: black;
+      }
+      .container .contactInfo .box .text {
+        display: flex;
+        margin-left: 20px;
+        font-size: 16px;
+        color: white;
+        flex-direction: column;
+        font-size: 19px;
+        font-weight: 350;
+      }
+      .container .contactInfo .box .text h3 {
+        font-size: 24px;
+        font-weight: 525;
+        color: #00bcd4;
+      }
+      .container .contactInfo .box .text p a {
+        display: flex;
+        font-size: 16px;
+        color: white;
+        flex-direction: column;
+        font-size: 19px;
+        font-weight: 350;
+        text-decoration: none;
+      }
+      .contactForm {
+        width: 37%;
+        padding: 40px;
+        background-color: white;
+        animation: esha 1s ease-in-out forwards;
+      }
+      @keyframes esha {
+        from {
+          opacity: 0;
+          transform: translateY(100px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .contactForm h2 {
+        font-size: 30px;
+        color: black;
+        font-weight: 500;
+        text-align: center;
+      }
+      .contactForm .inputBox {
+        position: relative;
+        width: 100%;
+        margin-top: 10px;
+      }
+      .contactForm .inputBox input,
+      .contactForm .inputBox textarea {
+        width: 100%;
+        padding: 5px 0;
+        font-size: 16px;
+        margin: 10px 0;
+        border: none;
+        border-bottom: 2px solid #333;
+        outline: none;
+        resize: none;
+      }
+      .contactForm .inputBox span {
+        position: absolute;
+        left: 0;
+        padding: 5px 0;
+        font-size: 19px;
+        margin: 10px 0;
+        color: black;
+        transition: 0.5s;
+        pointer-events: none;
+      }
+      .contactForm .inputBox input:focus ~ span,
+      .contactForm .inputBox input:valid ~ span,
+      .contactForm .inputBox textarea:focus ~ span,
+      .contactForm .inputBox textarea:valid ~ span {
+        color: #e91e63;
+        font-size: 14px;
+        transform: translateY(-20px);
+      }
+
+      .contactForm .inputBox input[type="submit"] {
+        width: 100px;
+        background: #00bcd4;
+        border: none;
+        border-radius: 4%;
+        cursor: pointer;
+        padding: 10px;
+        font-size: 18px;
+      }
+      @media (max-width: 991px) {
+        .contact {
+          padding: 50px;
+        }
+        .container {
+          flex-direction: column;
+        }
+        .container .contactInfo {
+          margin-bottom: 40px;
+        }
+        .container .contactInfo,
+        .contactForm {
+          width: 100%;
+        }
+      }
+      .popup{
+            width: 400px;
+            background: #FFF;
+            border-radius: 6px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%)  scale(0.1);
+            text-align: center;
+            justify-content: center;
+            padding: 0 30px 30px;
+            color: #333;
+            visibility: hidden;
+            transition: transform 0.4s,top 0.4s;
+            z-index: 1;
+        }
+        .popup img{
+            width:100px;
+            margin-top: -50px;
+            border-radius: 50%;
+            box-shadow: 0 2px 5px rgba(0,0, 0, 0.2);
+        }
+        .popup h2{
+            font-size:38px;
+            font-weight: 500;
+            margin:30px 0 10px;
+        }
+        .popup button{
+            width:100%;
+            margin-top:50px;
+            padding:10px 0;
+            background: #00bcd4;
+            color:#fff;
+            border:0;
+            outline:none;
+            font-size:18px;
+            border-radius: 4px;
+            cursor: pointer;
+            box-shadow: 0 5px 5px rgba(0,0,0,0.2);
+        }
+        .open-popup{
+            visibility: visible;
+            top:50%;
+            left: 50%;
+            transform:translate(-50%, -50%)  scale(1);
+            z-index: 1000;
+        }
+
+     /* footer */
+  
+  
+     .footer {
+    position: relative;
+    /* width: 95.5; */
+    width:100%;
+    background: #3586ff;
+    min-height: 150px;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+    
+    
+    
+    
+  }
+  .footer a{
+    color:white;
+    text-decoration: none;
+  }
+  
+  .social-icon,
+  .menu {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+    flex-wrap: wrap;
+    /* text-decoration: none; */
+    list-style: none;
+    padding:3px 3px;
+    gap:8px;
+    
+  }
+  
+  .social-icon__item,
+  .menu__item {
+    list-style: none;
+    
+  }
+  
+  .social-icon__link {
+    font-size: 2rem;
+    color: #fff;
+    margin: 0 10px;
+    display: inline-block;
+    transition: 0.5s;
+   
+  }
+  .social-icon__link:hover {
+    transform: translateY(-10px);
+  }
+  
+  .menu__link {
+    font-size: 1.2rem;
+    color: #fff;
+    margin: 0 10px;
+    display: inline-block;
+    transition: 0.5s;
+    /* text-decoration: none; */
+    opacity: 0.75;
+    font-weight: 300;
+    /* width:auto; */
+  
+  }
+ 
+  
+  .menu__link:hover {
+    opacity: 1;
+  }
+  
+  .footer p {
+    color: #fff;
+    margin: 15px 0 10px 0;
+    font-size: 1rem;
+    font-weight: 300;
+    
+    
+  }
+  
+  .wave {
+    position: absolute;
+    top: -100px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background:   url(./assets/images/wave3.png);
+    /* background: url("https://i.ibb.co/wQZVxxk/wave.png"); */
+    background-size: 1000px 100px;
+    margin-top: 20px;
+    
+    
+  }
+  
+  .wave#wave1 {
+    z-index: 1000;
+    opacity: 1;
+    bottom: 0;
+    animation: animateWaves 4s linear infinite;
+  }
+  
+  .wave#wave2 {
+    z-index: 999;
+    /* opacity: 0.5; */
+    opacity:0.7;
+    bottom: 10px;
+    animation: animate 4s linear infinite !important;
+  }
+  
+  .wave#wave3 {
+    z-index: 1000;
+    /* opacity: 0.2; */
+    opacity:0.6;
+    bottom: 15px;
+    animation: animateWaves 3s linear infinite;
+    margin-top: 5px;
+    
+    
+    
+    
+  }
+  
+  .wave#wave4 {
+    z-index: 999;
+    opacity: 0.7;
+    /* opacity:0.9; */
+    bottom: 20px;
+    animation: animate 3s linear infinite;
+  }
+  
+  @keyframes animateWaves {
+    0% {
+      background-position-x: 1000px;
+    }
+    100% {
+      background-positon-x: 0px;
+    }
+  }
+  
+  @keyframes animate {
+    0% {
+      background-position-x: -1000px;
+    }
+    100% {
+      background-positon-x: 0px;
+    }
+  }
+
+    </style>
+  </head>
+  <body>
+    <div class="hero">
+      <nav>
+        <img src="./assets/Images/LOGO.png" class="logo" />
+        <ul class="navbar">
+          <li><a href="./index.html">Home</a></li>
+          <!-- <li><a href="./Locations.html">Locations</a></li> -->
+          <!-- <li><a href="./Packages.html">Packages</a></li> -->
+          <li><a href="./About Us.html">About</a></li>
+          <li><a href="./Contact US.html">Contact Us</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <section class="contact">
+      <div class="content">
+        <h2>Contact Us</h2>
+        <p>
+          Don't be shy. Give us a call or drop us a line. Let's make some magic
+          together.
+        </p>
+      </div>
+      <div class="container">
+        <div class="contactInfo">
+          <div class="box">
+            <div class="icon">
+              <a href="https://goo.gl/maps/1A9K8rwUaZHbb4co8"
+                ><i class="fa-solid fa-location-dot"></i
+              ></a>
+            </div>
+            <div class="text">
+              <h3>Address</h3>
+              <p>
+                <a href="https://goo.gl/maps/1A9K8rwUaZHbb4co8">
+                  Govt. Graduate College,<br />
+                  Sheikhupura
+                </a>
+              </p>
+            </div>
+          </div>
+          <div class="box">
+            <div class="icon">
+              <a href="https://wa.me/03182628734"
+                ><i class="fa-brands fa-whatsapp"></i
+              ></a>
+            </div>
+            <div class="text">
+              <h3>Phone</h3>
+              <p><a href="https://wa.me/03182628734">0318 2628734</a></p>
+            </div>
+          </div>
+          <div class="box">
+            <div class="icon">
+              <a href="mailto:areebaramzan474@gmail.com"
+                ><i class="fa-regular fa-envelope"></i
+              ></a>
+            </div>
+            <div class="text">
+              <h3>Email</h3>
+              <p>
+                <a href="mailto:areebaramzan@gmail.com">areebaramzan@gmail.com</a>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="contactForm" id="contactForm">
+          <form action="./contact.php" method="POST">
+            <h2>Message</h2>
+            <div class="inputBox">
+              <input type="text" name="full_name" required="required" />
+              <span>Full Name</span>
+            </div>
+            <div class="inputBox">
+              <input type="text" name="email" required="required" />
+              <span>Email</span>
+            </div>
+            <div class="inputBox">
+              <input
+                type="tel"
+                name="phone_number"
+                id="phonenum"
+                required="required"
+                maxlength="11"
+              />
+              <span>Phone Number</span>
+            </div>
+            <div class="inputBox">
+              <textarea name="comments" required="required"></textarea>
+              <span>Comments</span>
+            </div>
+            <div class="inputBox">
+              <input type="submit" name="" value="Send" onclick="openPopup()" />
+            </div>
+          </form>
+          <div class="message" id="message">
+            <!-- message sent successfully! -->
+          </div>
+          <div class="popup" id="popup">
+            <img src="./assets/Images/bluetick.png">
+            <h2>Thank You!</h2>
+            <p>Your message has been sent successfully!.</p>
+            <button type="button" onclick="closePopup()">OK</button>
+        </div>
+        </div>
+      </div>
+
+
+    </section>
+
+ <!-- footer -->
+ <footer class="footer">
+  <div class="waves">
+    <div class="wave" id="wave1"></div>
+    <div class="wave" id="wave2"></div>
+    <div class="wave" id="wave3"></div>
+    <div class="wave" id="wave4"></div>
+  </div> 
+  <!-- class="social-icon__link" -->
+<ul class="social-icon">
+    <li class="social-icon__item">
+      <a class="social-icon__link" href="https://www.facebook.com/profile.php?id=100080833242524&mibextid=ZbWKwL"><i class="fa-brands fa-facebook"></i></a> 
+  </li>
+    <li class="social-icon__item">
+      <a class="social-icon__link" href="https://twitter.com/okiee_bro?t=r2XgCAGSXhf5eowRWs0y3g&s=08"><i class="fa-brands fa-square-twitter"></i></a> 
+  </li>
+    <li class="social-icon__item">
+      <a class="social-icon__link" href="mailto:areebaramzan474@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+  </li>
+    <li class="social-icon__item">
+      <a class="social-icon__link" href="https://instagram.com/okiee_bro?utm_source=qr&igshid=MzNlNGNkZWQ4Mg%3D%3D"><i class="fa-brands fa-square-instagram"></i></a>
+  </li>
+  </ul>
+  <ul class="menu">
+    <li class="menu_item"><a class="menu_link" href="#">Home</a></li>
+    <li class="menu_item"><a class="menu_link" href="./About Us.html">About</a></li>
+    <li class="menu_item"><a class="menu_link" href="./Locations.html">Locations</a></li>
+    <li class="menu_item"><a class="menu_link" href="./Packages.html">Packages</a></li>
+    <li class="menu_item"><a class="menu_link" href="./Contact US.html">Contact</a></li>
+
+  </ul>
+  <p>&copy;2023 MR TRAVELERS | All Rights Reserved</p> 
+</footer>
+   
+
+
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+    const popup = document.getElementById("popup");
+    const form = document.querySelector("form");
+
+    form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        if (validateName() && validatePhoneNumber() && validateForm()) {
+            sendData();
+        }
+    });
+
+        // Function to validate that only alphabetic characters are entered in the name field
+        function validateName() {
+      const nameInput = document.querySelector('input[name="full_name"]');
+      const name = nameInput.value.trim(); 
+
+      if (/^[a-zA-Z ]+$/.test(name)) {
+
+        return true;
+      } else {
+        alert("Please enter a valid name with alphabetic characters only.");
+        return false;
+      }
+    }
+
+    function validatePhoneNumber() {
+        const phoneNumberInput = document.getElementById("phonenum");
+        const phoneNumber = phoneNumberInput.value;
+
+        if (phoneNumber.length < 11 || isNaN(phoneNumber)) {
+            alert("Please enter a valid 11-digit phone number.");
+            return false;
+        }
+        return true;
+    }
+
+    function validateForm() {
+        return true;
+    }
+
+    function sendData() {
+        const formData = new FormData(form);
+        fetch("contact.php", {
+            method: "POST",
+            body: formData,
+        })
+            .then((response) => response.text())
+            .then((data) => {
+                if (data === "success") {
+                    showMessage();
+                    resetForm();
+                } else {
+                    alert("An error occurred while sending the message.");
+                }
+            })
+            .catch((error) => {
+                console.error("Error:", error);
+            });
+    }
+
+    function showMessage() {
+        popup.classList.add("open-popup");
+        // resetForm();
+    }
+
+    function resetForm() {
+        form.reset();
+    }
+
+    popup.querySelector("button").addEventListener("click", function () {
+        popup.classList.remove("open-popup");
+    });
+});
+</script>
+
+  </body>
+</html>

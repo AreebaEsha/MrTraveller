@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="./assets/CSS/style.css">
+    <title>Locations</title>
+    <link rel="icon" href="./assets/Images/LOGO.png">
+
+    <style>
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+.hero{
+    padding:0;
+   height:3vh;
+}
+body{
+    width:100%;
+    height:100vh;
+    background: #36768c;
+    font-family:"poppins",sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    
+}
+.card{
+    /* width:500px;    */
+    width:500vw;
+    height:500px;
+    border-radius: 20px;
+    overflow:hidden;
+    border:8px solid #fff;
+    position:relative;
+    align-items: center;
+    justify-content: center;
+    margin-top:12vh;
+    
+
+}
+.card-img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    border-radius: 15px;
+
+}
+.card-body{
+    width:100%;
+    height:100%;
+    top:0;
+    right:-100%;
+    position: absolute;
+    background: #1f3d4738;
+    backdrop-filter: blur(5px);
+    border-radius: 15px;
+    color:#fff;
+    padding:30px;
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    transition:2s;
+}
+.card:hover .card-body{
+right:0;
+}
+.card-title{
+ text-transform: uppercase;
+ font-size:60px;
+ font-weight:500;
+
+}
+.card-sub-title{
+    text-transform: capitalize;
+    font-size:16px;
+    font-weight:300;
+}
+.card-info{
+    font-size:18px;
+    line-height: 25px;
+    margin:40px 0;
+    font-weight: 400;
+
+}
+.card-btn{
+    color:#1f3d47;
+    background: #8fabba;
+    padding:10px 30px;
+    border-radius: 20px;
+    text-transform:capitalize;
+    border:none;
+    outline:none;
+    font-weight:500;
+    cursor:pointer;
+    width:120px;
+    transition: ease 0.30s;
+}
+.card-btn:hover{
+    transform:scale(1.1);
+    color: white;
+    background-color: rgb(27, 112, 112);
+    /* border: 2px solid rgb(42, 37, 68); */
+    box-shadow: 5px 10px 30px rgba(0, 0, 0, 0.4);
+    padding: 10px 30px;
+}
+    </style>
+
+</head>
+
+<body>
+
+        <div class="hero">
+            <nav>
+                <img src="./assets/Images/LOGO.png" class="logo">
+                <ul class="navbar">
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="About Us.html">About</a></li>
+                    <li><a href="Contact US.html">Contact Us</a></li>
+
+                </ul>
+            </nav>
+        </div>
+    
+
+        <!-- Locations -->
+
+
+    <div class="card">
+        <img src="./assets/Images/1.jpg" class="card-img" alt="">
+        <div class="card-body">
+            <h2 class="title">TURKEY</h2>
+            <p class="card-sub-title">Istanbul </p>
+            <p class="card-info">Check out turkey trips with affordable packages!</p>
+            <button class="card-btn"><a href="./Packages.html">View Packages</a></button>
+        </div>
+    </div>
+    &nbsp;&nbsp;
+    <div class="card">
+        <img src="./assets/Images/2.jpg" class="card-img" alt="">
+        <div class="card-body">
+            <h2 class="title">FRANCE</h2>
+            <p class="card-sub-title">Paris</p>
+            <p class="card-info">Check out France trips with affordable packages! </p>
+            <button class="card-btn"><a href="./Packages.html">View Packages</a></button>
+        </div>
+    </div>
+    &nbsp;&nbsp;
+    <div class="card">
+        <img src="./assets/Images/5.jpg" class="card-img" alt="">
+
+        <div class="card-body">
+            <h2 class="title">UNITED ARAB EMIRATES</h2>
+            <p class="card-sub-title">Dubai</p>
+            <p class="card-info">Check out United Arab Emirates trips with affordable packages! </p>
+            <button class="card-btn"><a href="./Packages.html">View Packages</a></button>
+        </div>
+    </div>
+    &nbsp;&nbsp;
+    <div class="card">
+        <img src="./assets/Images/amsterdam.jpg" class="card-img" alt="">
+
+        <div class="card-body">
+            <h2 class="title">NETHERLAND</h2>
+            <p class="card-sub-title">Amsterdam</p>
+            <p class="card-info">Check out NetherLand trips with affordable packages! </p>
+            <button class="card-btn"><a href="./Packages.html">View Packages</a></button>
+        </div>
+    </div>
+    &nbsp;&nbsp;
+    <div class="card">
+        <img src="./assets/Images/Bali.jpg" class="card-img" alt="">
+
+        <div class="card-body">
+            <h2 class="title">INDONESIA</h2>
+            <p class="card-sub-title">Bali</p>
+            <p class="card-info">Check out Indonesia trips with affordable packages! </p>
+            <button class="card-btn"><a href="./Packages.html">View Packages</a></button>
+        </div>
+    </div>
+    &nbsp;&nbsp;
+    <div class="card">
+        <img src="./assets/Images/seoul.jpg" class="card-img" alt="">
+
+        <div class="card-body">
+            <h2 class="title">SOUTH KOREA</h2>
+            <p class="card-sub-title">Seoul</p>
+            <p class="card-info">Check out South Korea trips with affordable packages! </p>
+            <button class="card-btn"><a href="./Packages.html">View Packages</a></button>
+        </div>
+    </div>
+    &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+    <script src="" async defer></script>
+</body>
+
+</html>

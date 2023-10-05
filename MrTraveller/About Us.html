@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="./assets/CSS/style.css">
+  <title>MR TRAVELLER</title>
+  <link rel="icon" href="./assets/Images/LOGO.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="./assets/css/all.css" />
+  <style>
+    .hero{
+      height: 10vh;
+      z-index:100;
+    }
+    body{
+      /* background:  url(./assets/Images/aboutbg.jpg); */
+      background-repeat: no-repeat;
+      background-size: cover;
+      height:100vh;
+      width:100%;
+    }
+
+    *{
+      margin:0;
+      padding:0;
+      font-family: "montserrat", sans-serif;
+    }
+    .testimonials{
+      
+      padding:40px 0;
+      background: #130101;
+      color:#fdf7f7;
+      text-align:center;
+    }
+   .inner{
+    max-width:1200px;
+    margin:auto;
+    overflow:hidden;
+    padding:0 20px;
+   }
+   .border{
+    border: 160px;
+    height:5px;
+    background:#f3a303;
+    margin:26px auto;
+   }
+ .row{
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+ }
+ .col{
+  flex:33.33%;
+  max-width:40%;
+  box-sizing:border-box;
+  padding:15px;
+ }
+ .testimonials{
+  background: #037a97;
+  padding:30px;
+ }
+ .testimonials img{
+  width:100px;
+  height: 100px;
+  border-radius: 50%;
+ }
+ .name{
+  font-size:20px;
+  text-transform: uppercase;
+  margin:20px  0;
+
+ }
+ .stars{
+  color:#6ab04c;
+  margin-bottom: 20px;
+ }
+ @media screen and (max-width:960px) {
+  .col{
+    flex:100%;
+    max-width:80%;
+  }
+ }
+ @media screen and (max-width:600px) {
+  .col{
+    flex:100%;
+    max-width:100%;
+  }
+ }
+
+
+/* for team  */
+* {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        scroll-behavior: smooth;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+       
+        /* background-color: black; */
+        /* background: linear-gradient(45deg, #ffaf00,#bb02ff); */
+        background:rgb(126, 179, 192);
+        min-height: 100vh;
+      }
+      .header {
+        justify-content: center;
+        align-items: center;
+        color: white;
+      }
+      .text-box {
+        padding-top: 80px;
+        padding-left: 6px;
+        padding-right: 6px;
+        padding-bottom: 10px;
+        top: 15%;
+        font-size: 17px;
+        letter-spacing: 1px;
+        /* line-height: 26px; */
+      }
+      .text-box .au {
+        font-size: 36px;
+        line-height: 16px;
+        text-align: center;
+      }
+      .text-box .para {
+        font-size: 17px;
+        line-height: 50px;
+        text-align: center;
+      }
+      .container {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        /* margin: 2% 0; */
+        margin-top: 2%;
+        animation: esha 2s ease-in-out forwards;
+      }
+      @keyframes esha {
+        from {
+          opacity: 0;
+          transform: translateY(100px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .container .card {
+        position: relative;
+        width: 300px;
+        height: 400px;
+        /* background: rgba(255, 255, 255, 0.05); */
+        background:#037a97;
+        margin: 20px;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        border-radius: 25px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        backdrop-filter: blur(10px);
+      }
+      .container .card .content {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        transition: 0.5s;
+      }
+      .container .card:hover .content {
+        transform: translateY(-20px);
+      }
+      .container .card .content .imgBx {
+        position: relative;
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 10px solid rgba(0, 0, 0, 25);
+      }
+      .container .card .content .imgBx img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .container .card .content .contentBx h3 {
+        color: #fff;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: 500;
+        font-size: 18px;
+        text-align: center;
+        margin: 20px 0 10px;
+        line-height: 1.1em;
+      }
+      .container .card .content .contentBx h3 span {
+        font-size: 12px;
+        font-weight: 300;
+        text-transform: initial;
+      }
+      .container .card .sci {
+        position: absolute;
+        bottom: 50px;
+        display: flex;
+      }
+      .container .card .sci li {
+        list-style: none;
+        margin: 0 10px;
+        transform: translateY(40px);
+        transition: 0.5s;
+        opacity: 0;
+        transition-delay: calc(0.1s * var(--i));
+      }
+      .container .card:hover .sci li {
+        transform: translateY(0px);
+        opacity: 1;
+      }
+      .container .card .sci li a {
+        color: #fff;
+        font-size: 40px;
+      }
+
+
+
+  </style>
+
+
+</head>
+
+
+<body>
+  <div class="hero">
+    <nav>
+      <img src="./assets/Images/LOGO.png" class="logo" />
+      <ul class="navbar">
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./About Us.html">About</a></li>
+        <li><a href="./Contact US.html">Contact Us</a></li>
+      </ul>
+    </nav>
+  </div>
+  <br>
+  <br><br><br><br>
+  <section>
+    <div class="header">
+        <div class="text-box">
+          <h2 class="au">About Us</h2>
+          <p class="para"><span class="auto-text"></span></p>
+        </div>
+      </div>
+  <div class="container">
+    <div class="card">
+      <div class="content">
+        <div class="imgBx">
+          <img
+            src="./assets/images/esha.jpg"
+          />
+        </div>
+        <div class="contentBx">
+          <h3>Esha Khalid<br/><span>Web Developer</span></h3>
+        </div>
+      </div>
+      <ul class="sci">
+        <li style="--i: 1">
+          <a href="https://instagram.com/okiee_bro?utm_source=qr&igshid=MzNlNGNkZWQ4Mg%3D%3D"><i class="fa-brands fa-square-instagram"></i></a>
+        </li>
+        <li style="--i: 2">
+          <a href="https://twitter.com/okiee_bro?t=r2XgCAGSXhf5eowRWs0y3g&s=08"><i class="fa-brands fa-square-twitter"></i></a>
+        </li>
+        <li style="--i: 3">
+          <a href="mailto:eshavirk@gmail.com"><i class="fa-solid fa-envelope"></i></i></a>
+        </li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="content">
+        <div class="imgBx">
+          <img
+            src="./assets/images/areeba.jpg"
+          />
+        </div>
+        <div class="contentBx">
+          <h3>Areeba Ramzan<br /><span>Web Developer</span></h3>
+        </div>
+      </div>
+      <ul class="sci">
+        <li style="--i: 1">
+          <a href="https://instagram.com/_aribzzter_?utm_source=qr&igshid=MzNlNGNkZWQ4Mg%3D%3D"><i class="fa-brands fa-square-instagram"></i></a>
+        </li>
+        <li style="--i: 2">
+          <a href="https://twitter.com/aribzzter_?t=9DE6JAgxN3VYtWtwDPvygA&s=08"><i class="fa-brands fa-square-twitter"></i></a>
+        </li>
+        <li style="--i: 3">
+          <a href="mailto:areebaramzan474@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+
+  <div class="testimonials">
+    <div class="inner">
+      <h1>REVIEWS</h1>
+      <div class="border"></div>
+      <div class="row">
+        <div class="col">
+          <div class="testimonials"></div>
+          <img src="./assets/Images/Atif-Aslam.jpg" alt="">
+          <div class="name">Atif Aslam</div>
+          <div class="stars">
+            <i class="fa-solid fa-star" style="color: #ffd500;"></i>
+            <i class="fa-solid fa-star" style="color: #ffd500;"></i>
+            <i class="fa-solid fa-star" style="color: #ffd500;"></i>
+            <i class="fa-solid fa-star" style="color: #ffd500;"></i>
+            <i class="fa-solid fa-star" style="color: #ffd500;"></i>
+          </div>
+          <p>Overall, my vacation to Bali was a treasured experience that I will never forget.
+            I wholeheartedly urge anyone for a distinctive and worthwhile vacation experience to do it.
+          </p>
+
+        </div>
+
+        <div class="col">
+          <div class="testimonials"></div>
+          <img src="./assets/Images/lee min ho.webp" alt="">
+          <div class="name">Lee Min Ho</div>
+          <div class="stars">
+            <i class="fa-solid fa-star" style="color: #ffd500;"></i>
+            <i class="fa-solid fa-star" style="color: #ffd500;"></i>
+            <i class="fa-solid fa-star" style="color: #ffd500;"></i>
+            <i class="fa-solid fa-star" style="color: #ffd500;"></i>
+            <i class="fa-regular fa-star"></i>
+          </div>
+          <p>Overall, my vacation to Bali was a treasured experience that I will never forget.
+            I wholeheartedly urge anyone for a distinctive and worthwhile vacation experience to do it.
+          </p>
+
+        </div>
+
+
+
+        <div class="col">
+          <div class="testimonials"></div>
+          <img src="./assets/Images/burak.jpg" alt="">
+          <div class="name">Burak Oc</div>
+          <div class="stars">
+            <i class="fa-solid fa-star" style="color: #ffd500;"></i>
+            <i class="fa-solid fa-star" style="color: #ffd500;"></i>
+            <i class="fa-solid fa-star" style="color: #ffd500;"></i>
+            <i class="fa-solid fa-star" style="color: #ffd500;"></i>
+            <i class="fa-regular fa-star"></i>
+          </div>
+          <p>Overall, my vacation to Bali was a treasured experience that I will never forget.
+            I wholeheartedly urge anyone for a distinctive and worthwhile vacation experience to do it.
+          </p>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script>
+      var typed = new Typed(".auto-text", {
+        strings: ["Embark on your journey with us - we are here to guide you every step of the way","Discover the world with us - your journey starts here","Step into a world of exploration - let us be your guide","Navigate the globe with confidence - let us be your compass"],
+        typeSpeed: 50,
+        backSpeed: 30,
+        startDelay: 200,
+        backDelay: 500,
+        loop: true,
+      });
+    </script>
+
+
+
+</body>
+
+</html>
